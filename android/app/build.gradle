@@ -161,6 +161,13 @@ android {
         }
     }
 
+    flavorDimensions "react-native-camera"
+    productFlavors {
+        general {
+        dimension "react-native-camera"
+        }
+    }
+
     if (isNewArchitectureEnabled()) {
         // We configure the NDK build only if you decide to opt-in for the New Architecture.
         externalNativeBuild {
@@ -311,3 +318,4 @@ def isNewArchitectureEnabled() {
     // - Set an environment variable `ORG_GRADLE_PROJECT_newArchEnabled=true`
     return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
 }
+
